@@ -169,7 +169,7 @@ def delete_race(
     db.delete(race)
     db.commit()
 
-    return {"ok": True, "message": f"Character {race_id} deleted"}
+    return {"ok": True, "message": f"Race {race_id} deleted"}
 
 
 # ------------ MagicType ----------------
@@ -243,4 +243,4 @@ def delete_magic_type(
     db.delete(magictype)
     db.commit()
 
-    return {"ok": True, "message": f"Character {magic_type_id} deleted"}
+    return {"ok": True, "message": f"Magic Type {magic_type_id} deleted"}
