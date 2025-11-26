@@ -1,0 +1,22 @@
+# Creating a race
+
+{
+    "race": "Human"
+}
+
+# Creating a Magic Type
+
+{
+    "magic": "Arcane"
+}
+
+# Creating a character
+
+{
+    "name": "Jaina Proudmoore",
+    "age": 36,
+    "race_id": 1,
+    "magic_type_id": 1
+}
+
+
