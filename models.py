@@ -5,7 +5,7 @@ from typing import Optional, List
 
 class Race(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
-    race: str = Field(index=True) # Human, Elf, Dwarve
+    race: str = Field(index=True) # Human, Elf, Dwarf
 
 class MagicType(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
@@ -14,7 +14,7 @@ class MagicType(SQLModel, table=True):
 
 
 class Character(SQLModel, table = True):
-    character_id: Optional[int] = Field(default=None, primary_key=True)
+    id: Optional[int] = Field(default=None, primary_key=True)
     name: str = Field(index=True)
     age: Optional[int]
     

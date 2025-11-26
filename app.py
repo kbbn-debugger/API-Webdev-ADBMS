@@ -26,7 +26,7 @@ app = FastAPI(
 # ------------ Character ----------------
 # Post
 
-@app.post("/character/", response_model=CharacterPublic)
+@app.post("/characters/", response_model=CharacterPublic)
 def create_character(
     character_data: CharacterCreate,
     db: Session = Depends(get_session)
@@ -39,14 +39,14 @@ def create_character(
 
 # read all - get
 
-@app.get("/character/", response_model=List[CharacterPublic])
+@app.get("/characters/", response_model=List[CharacterPublic])
 def read_characters(db: Session = Depends(get_session)):
     results = db.exec(select(Character)).all()
     return results
 
 # read one - get
 
-@app.get("/character/{character_id}", response_model=CharacterPublic)
+@app.get("/characters/{character_id}", response_model=CharacterPublic)
 def read_character(
     *,
     character_id: int,
@@ -59,7 +59,7 @@ def read_character(
 
 # Update
 
-@app.patch("/character/{character_id}", response_model=CharacterPublic)
+@app.patch("/characters/{character_id}", response_model=CharacterPublic)
 def update_character(
     *,
     character_id: int,
@@ -81,7 +81,7 @@ def update_character(
 
 # Delete
 
-@app.delete("/character/{character_id}")
+@app.delete("/characters/{character_id}")
 def delete_character(
     *,
     character_id: int,
@@ -101,7 +101,7 @@ def delete_character(
 # ------------ Race ----------------
 # Post
 
-@app.post("/race/", response_model=RacePublic)
+@app.post("/races/", response_model=RacePublic)
 def create_race(
     race_data: RaceCreate,
     db: Session = Depends(get_session)
@@ -114,14 +114,14 @@ def create_race(
 
 # read all - get
 
-@app.get("/race/", response_model=List[RacePublic])
+@app.get("/races/", response_model=List[RacePublic])
 def read_races(db: Session = Depends(get_session)):
     results = db.exec(select(Race)).all()
     return results
 
 # read one - get
 
-@app.get("/race/{race_id}", response_model=RacePublic)
+@app.get("/races/{race_id}", response_model=RacePublic)
 def read_race(
     *,
     race_id: int,
@@ -134,7 +134,7 @@ def read_race(
 
 # Update
 
-@app.patch("/race/{race_id}", response_model=RacePublic)
+@app.patch("/races/{race_id}", response_model=RacePublic)
 def update_race(
     *,
     race_id: int,
@@ -156,7 +156,7 @@ def update_race(
 
 # Delete
 
-@app.delete("/race/{race_id}")
+@app.delete("/races/{race_id}")
 def delete_race(
     *,
     race_id: int,
@@ -175,7 +175,7 @@ def delete_race(
 # ------------ MagicType ----------------
 # Post
 
-@app.post("/magictype/", response_model=MagicTypePublic)
+@app.post("/magictypes/", response_model=MagicTypePublic)
 def create_magictype(
     magictype_data: MagicTypeCreate,
     db: Session = Depends(get_session)
@@ -188,14 +188,14 @@ def create_magictype(
 
 # read all - get
 
-@app.get("/magictype/", response_model=List[MagicTypePublic])
+@app.get("/magictypes/", response_model=List[MagicTypePublic])
 def read_magictypes(db: Session = Depends(get_session)):
     results = db.exec(select(MagicType)).all()
     return results
 
 # read one - get
 
-@app.get("/magictype/{magic_type_id}", response_model=MagicTypePublic)
+@app.get("/magictypes/{magic_type_id}", response_model=MagicTypePublic)
 def read_magictype(
     *,
     magic_type_id: int,
@@ -208,7 +208,7 @@ def read_magictype(
 
 # Update
 
-@app.patch("/magictype/{magic_type_id}", response_model=MagicTypePublic)
+@app.patch("/magictypes/{magic_type_id}", response_model=MagicTypePublic)
 def update_magictype(
     *,
     magic_type_id: int,
@@ -230,7 +230,7 @@ def update_magictype(
 
 # Delete
 
-@app.delete("/magictype/{magic_type_id}")
+@app.delete("/magictypes/{magic_type_id}")
 def delete_magic_type(
     *,
     magic_type_id: int,

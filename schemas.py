@@ -6,15 +6,15 @@ from sqlmodel import SQLModel
 class CharacterCreate(SQLModel):
     name: str
     age: Optional[int] = None
-    race_id: int
-    magic_type_id: int
+    race_id: Optional[int] = None
+    magic_type_id: Optional[int] = None
 
 class CharacterPublic(SQLModel):
     id: int
     name: str
     age: Optional[int] = None
-    race_id: int
-    magic_type_id: int
+    race_id: Optional[int] = None
+    magic_type_id: Optional[int] = None
 
 class CharacterUpdate(SQLModel):
     name: Optional[str] = None
